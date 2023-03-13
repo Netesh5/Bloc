@@ -1,5 +1,5 @@
-class InternetEvent {}
+abstract class InternetEvent {}
 
-class InternetOff extends InternetEvent {}
+class InternetOffEvent extends InternetEvent {}
 
-class InternetOn extends InternetEvent {}
+class InternetOnEvent extends InternetEvent {}
