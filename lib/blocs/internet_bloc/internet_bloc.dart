@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:blocapp/blocs/internet_bloc/internet_event.dart';
 import 'package:blocapp/blocs/internet_bloc/internet_state.dart';
 import 'package:connectivity/connectivity.dart';

@@ -1,5 +1,7 @@
 import 'package:blocapp/blocs/internet_bloc/internet_bloc.dart';
 import 'package:blocapp/blocs/internet_bloc/internet_state.dart';
+import 'package:blocapp/cubit/internet_cubit.dart';
+import 'package:blocapp/cubit/internet_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,17 +16,17 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SafeArea(
           child: Center(
-              child: BlocConsumer<InternetBloc, InternetState>(
+              child: BlocConsumer<InternetCubit, InternetStateCubit>(
         listener: (context, state) {
           // TODO: implement listener
         },
         builder: (context, state) {
-          if (state is InternetOnState) {
+          if (state is InternetStateOnCubit) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [Icon(Icons.wifi), Text("Internet On")],
             );
-          } else if (state is InternetOffState) {
+          } else if (state is InternetStateOffCubit) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
