@@ -1,6 +1,7 @@
-import 'package:blocapp/cubit/internet_cubit.dart';
+import 'package:blocapp/routes/routes.dart';
+import 'package:blocapp/routes/routes_name.dart';
 import 'package:blocapp/view/signin/bloc/signin_bloc.dart';
-import 'package:blocapp/view/signin/signup.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,13 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => InternetCubit(),
-      child: MaterialApp(
+      create: (context) => SignInBloc(),
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: BlocProvider(
-          create: (context) => SignInBloc(),
-          child: SigninScreen(),
-        ),
+        onGenerateRoute: Routes.onGenerateRoutes,
+        initialRoute: RoutesName.sigin,
       ),
     );
   }
