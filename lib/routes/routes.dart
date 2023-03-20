@@ -4,6 +4,7 @@ import 'package:blocapp/screens/cubits/signinscreen_cubit.dart';
 
 import 'package:blocapp/view/homepage.dart';
 import 'package:blocapp/view/signin/signup.dart';
+import 'package:blocapp/view/visiblity/visibilty.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,6 +23,8 @@ class Routes {
                   create: (context) => SigninScreenCubit(),
                   child: SigninScreen(),
                 )));
+      case RoutesName.visibilty:
+        return MaterialPageRoute(builder: ((context) => CustomVisibilty()));
       default:
         return MaterialPageRoute(builder: ((context) {
           return const Scaffold(
