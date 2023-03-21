@@ -3,6 +3,7 @@ import 'package:blocapp/screens/cubits/homescreen_cubit.dart';
 import 'package:blocapp/screens/cubits/signinscreen_cubit.dart';
 
 import 'package:blocapp/view/homepage.dart';
+import 'package:blocapp/view/homepage/homescreen.dart';
 import 'package:blocapp/view/signin/signup.dart';
 import 'package:blocapp/view/visiblity/visibilty.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,8 @@ class Routes {
                 )));
       case RoutesName.visibilty:
         return MaterialPageRoute(builder: ((context) => CustomVisibilty()));
+      case RoutesName.homeScreen:
+        return MaterialPageRoute(builder: ((context) => const HomePage()));
       default:
         return MaterialPageRoute(builder: ((context) {
           return const Scaffold(
