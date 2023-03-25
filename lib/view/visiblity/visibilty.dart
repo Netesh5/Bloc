@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomVisibilty extends StatefulWidget {
-  CustomVisibilty({Key? key}) : super(key: key);
+  const CustomVisibilty({Key? key}) : super(key: key);
 
   @override
   State<CustomVisibilty> createState() => _CustomVisibiltyState();
@@ -29,13 +29,11 @@ class _CustomVisibiltyState extends State<CustomVisibilty> {
                     title: const Text("Block Number"),
                     value: iswitchedOn,
                     onChanged: ((value) {
-                      iswitchedOn = !iswitchedOn;
+                      iswitchedOn = value;
                       if (iswitchedOn == true) {
-                        BlocProvider.of<SwitchCubit>(context)
-                            .emit(SwitchOnStateCubit());
+                        BlocProvider.of<SwitchCubit>(context).switchedOn();
                       } else {
-                        BlocProvider.of<SwitchCubit>(context)
-                            .emit(SwitchOffStateCubit());
+                        BlocProvider.of<SwitchCubit>(context).switchedOff();
                       }
                     })),
                 Visibility(
